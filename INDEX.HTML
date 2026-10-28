@@ -1,0 +1,142 @@
+<style>
+  .srv-wrap { position: relative; width: 100%; max-width: 1100px; margin: 0 auto; padding: 20px 0 24px; font-family: sans-serif; box-sizing: border-box; overflow: hidden; }
+  .srv-wrap * { box-sizing: border-box; }
+  .srv-title { color: #fff !important; margin: 0 0 4px; padding: 0 64px; font-size: 24px; }
+  .srv-sub { color: #cbd5e1 !important; font-size: 14px; margin: 0 0 16px; padding: 0 64px; }
+
+  /* Linha: [seta] [fotos] [seta] */
+  .srv-row { display: flex; align-items: center; gap: 12px; padding: 0 12px; }
+  .srv-btn { flex: 0 0 40px; width: 40px; height: 40px; border: 0; border-radius: 50%; background: rgba(255,255,255,.92); color: #0b1730; font-size: 22px; line-height: 1; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.4); padding: 0; display: flex; align-items: center; justify-content: center; }
+
+  .srv-track { flex: 1 1 auto; min-width: 0; display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 0; }
+  .srv-track::-webkit-scrollbar { display: none; }
+
+  /* Desktop e tablet: 3 cards exatamente dentro da área entre as setas */
+  .srv-card { flex: 0 0 calc((100% - 32px) / 3); scroll-snap-align: start; color: #fff; }
+  .srv-card img { width: 100%; aspect-ratio: 1 / 1; height: auto; object-fit: cover; display: block; border-radius: 14px; background: #3b2f45; }
+  .srv-info { padding: 10px 4px 0; }
+  .srv-info h3 { margin: 0 0 4px; font-size: 16px; color: #fff !important; }
+  .srv-info small { color: #94a3b8 !important; display: block; }
+  .srv-info strong { color: #fff !important; font-size: 14px; }
+
+  /* Mobile (classe aplicada pelo script): 1 imagem centralizada, sem setas */
+  .srv-wrap.srv-mobile .srv-btn { display: none; }
+  .srv-wrap.srv-mobile .srv-row { padding: 0 12px; }
+  .srv-wrap.srv-mobile .srv-card { flex: 0 0 100%; scroll-snap-align: center; }
+  .srv-wrap.srv-mobile .srv-info { text-align: center; }
+  .srv-wrap.srv-mobile .srv-title, .srv-wrap.srv-mobile .srv-sub { text-align: center; padding: 0 12px; }
+
+  .srv-dots { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
+  .srv-dot { width: 9px; height: 9px; border-radius: 50%; background: #4b5563; border: 0; padding: 0; cursor: pointer; }
+  .srv-dot.ativo { background: #2f80ff; }
+</style>
+
+<div class="srv-wrap" id="srvWrap">
+  <h2 class="srv-title">Nossos Serviços</h2>
+  <p class="srv-sub">Sobrancelhas, cílios e estética facial</p>
+
+  <div class="srv-row">
+    <button class="srv-btn srv-prev" aria-label="Anterior" onclick="var t=document.getElementById('srvTrack');t.scrollBy({left:-(t.querySelector('.srv-card').offsetWidth+16),behavior:'smooth'})">&#8249;</button>
+
+    <div class="srv-track" id="srvTrack">
+
+      <div class="srv-card">
+        <img alt="Design de Sobrancelhas" src="https://softr-tables-eu-prod-bucket02.s3.eu-central-1.amazonaws.com/attachments/8ec2c37d-30c3-49e4-8b0e-14b266d9d31d/5ArAnrIxfsOvHt/UJirMTL3tM0n3V/tDOfK/e5640c10-79f2-4f88-a055-0c866af8d7fe/e9c90dfc-2d95-4d46-ad71-4da50152fc9e?response-content-disposition=inline%3B%20filename%3D%22out-0.webp%22%3B%20filename%2A%3DUTF-8%27%27out-0.webp&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261025T010702Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261025%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=604800&X-Amz-Signature=bdb376a07434f9b5802d1deed2af105bef2a53519fec68176420a75660632044">
+        <div class="srv-info"><h3>Design de Sobrancelhas</h3><small>Preço</small><strong>R$50,00</strong></div>
+      </div>
+
+      <div class="srv-card">
+        <img alt="Micropigmentação Labial" src="https://softr-tables-eu-prod-bucket02.s3.eu-central-1.amazonaws.com/attachments/8ec2c37d-30c3-49e4-8b0e-14b266d9d31d/5ArAnrIxfsOvHt/CmhfcCmnDHxazd/tDOfK/624f70c1-99b8-43a8-b1c3-810f4a930b30/9b1e4c79-7f99-469d-b9ed-4ae67991e86c?response-content-disposition=inline%3B%20filename%3D%22out-0.webp%22%3B%20filename%2A%3DUTF-8%27%27out-0.webp&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261025T010702Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261025%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=604800&X-Amz-Signature=9fec10cef2e5c07623cb2555b63b5412867a0f9365bb6b16e5a15b8ad56dfa21">
+        <div class="srv-info"><h3>Micropigmentação Labial</h3><small>Preço</small><strong>R$600,00</strong></div>
+      </div>
+
+      <div class="srv-card">
+        <img alt="Extensão de Cílios Fio a Fio" src="https://softr-tables-eu-prod-bucket02.s3.eu-central-1.amazonaws.com/attachments/8ec2c37d-30c3-49e4-8b0e-14b266d9d31d/5ArAnrIxfsOvHt/fn6lQBcEOJWgBH/tDOfK/593dc6c7-e975-4298-8266-7ce9550346e3/dff3fbdf-2d76-4a35-99f0-6e44728212d4?response-content-disposition=inline%3B%20filename%3D%22out-0.webp%22%3B%20filename%2A%3DUTF-8%27%27out-0.webp&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261025T010702Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261025%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=604800&X-Amz-Signature=7faf10948eab0be2b8a0d3439505506c9d2bc5f71f845d8339370d3ed9a8812d">
+        <div class="srv-info"><h3>Extensão de Cílios Fio a Fio</h3><small>Preço</small><strong>R$150,00</strong></div>
+      </div>
+
+      <div class="srv-card">
+        <img alt="Limpeza de Pele Profunda" src="https://softr-tables-eu-prod-bucket02.s3.eu-central-1.amazonaws.com/attachments/8ec2c37d-30c3-49e4-8b0e-14b266d9d31d/5ArAnrIxfsOvHt/tdfVmTQlC5Cm2i/tDOfK/3c06aaf8-95ee-4872-a4f8-14bd7df02700/23296235-8a32-4417-8817-c5fe7514dd0f?response-content-disposition=inline%3B%20filename%3D%22out-0.webp%22%3B%20filename%2A%3DUTF-8%27%27out-0.webp&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261025T010702Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261025%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=604800&X-Amz-Signature=5fd8204f9e82f1c745846ba0da804a3ad833700aeaa7630d967f082134231706">
+        <div class="srv-info"><h3>Limpeza de Pele Profunda</h3><small>Preço</small><strong>R$120,00</strong></div>
+      </div>
+
+      <div class="srv-card">
+        <img alt="Henna para Sobrancelhas" src="https://softr-tables-eu-prod-bucket02.s3.eu-central-1.amazonaws.com/attachments/8ec2c37d-30c3-49e4-8b0e-14b266d9d31d/5ArAnrIxfsOvHt/Rf2s93oUwDDsQD/tDOfK/c411348c-e1dc-4f09-99e6-a540cbb4ab17/0b802c67-3778-45b3-a7a1-950736c9efbf?response-content-disposition=inline%3B%20filename%3D%22out-0.webp%22%3B%20filename%2A%3DUTF-8%27%27out-0.webp&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261025T010702Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261025%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=604800&X-Amz-Signature=cb9a19b4290fd122c893f1a106d330f1415a800a9af3dcfa57d3b275e757ab66">
+        <div class="srv-info"><h3>Henna para Sobrancelhas</h3><small>Preço</small><strong>R$40,00</strong></div>
+      </div>
+
+      <div class="srv-card">
+        <img alt="Lash Lifting" src="https://softr-tables-eu-prod-bucket02.s3.eu-central-1.amazonaws.com/attachments/8ec2c37d-30c3-49e4-8b0e-14b266d9d31d/5ArAnrIxfsOvHt/0IoC5jkkqIVJ0o/tDOfK/0ecf9fa0-3fd5-47d0-a9ce-9af3ab5e8816/f880c46a-a498-48e0-af99-d87646b38b3f?response-content-disposition=inline%3B%20filename%3D%22out-0.webp%22%3B%20filename%2A%3DUTF-8%27%27out-0.webp&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261025T010702Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261025%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=604800&X-Amz-Signature=38541a38d817afd626554ccfcb1736ec9941de49f75e518f96166754edd2d0e8">
+        <div class="srv-info"><h3>Lash Lifting</h3><small>Preço</small><strong>R$180,00</strong></div>
+      </div>
+
+      <div class="srv-card">
+        <img alt="Microagulhamento" src="https://softr-tables-eu-prod-bucket02.s3.eu-central-1.amazonaws.com/attachments/8ec2c37d-30c3-49e4-8b0e-14b266d9d31d/5ArAnrIxfsOvHt/PRknc9nTl73Vv6/tDOfK/9818f327-880e-4930-a0ec-c6bef230843d/2d3151d4-9714-4737-9f77-9077489a7fc7?response-content-disposition=inline%3B%20filename%3D%22out-0.webp%22%3B%20filename%2A%3DUTF-8%27%27out-0.webp&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261025T010702Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261025%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=604800&X-Amz-Signature=84f0a9360bf67cb2f1efec2808cf0f75565a5bc70a43db92495345ffb6630b22">
+        <div class="srv-info"><h3>Microagulhamento</h3><small>Preço</small><strong>R$350,00</strong></div>
+      </div>
+
+      <div class="srv-card">
+        <img alt="Volume Russo" src="https://softr-tables-eu-prod-bucket02.s3.eu-central-1.amazonaws.com/attachments/8ec2c37d-30c3-49e4-8b0e-14b266d9d31d/5ArAnrIxfsOvHt/dFSt5WjPWJmlzc/tDOfK/43ef26e8-1a87-42a5-9001-9a2fc34d8fe4/c09f1be0-96f7-4de0-bc98-f21304b491a9?response-content-disposition=inline%3B%20filename%3D%22out-0.webp%22%3B%20filename%2A%3DUTF-8%27%27out-0.webp&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261025T010702Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261025%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=604800&X-Amz-Signature=74cfe393f369279a4a73732ef850b6ae5d88d44fbef1a16c1805ff0943d43dfd">
+        <div class="srv-info"><h3>Volume Russo</h3><small>Preço</small><strong>R$220,00</strong></div>
+      </div>
+
+    </div>
+
+    <button class="srv-btn srv-next" aria-label="Próximo" onclick="var t=document.getElementById('srvTrack');t.scrollBy({left:(t.querySelector('.srv-card').offsetWidth+16),behavior:'smooth'})">&#8250;</button>
+  </div>
+
+  <div class="srv-dots" id="srvDots"></div>
+</div>
+
+<script>
+(function () {
+  var wrap = document.getElementById("srvWrap");
+  var track = document.getElementById("srvTrack");
+  var dotsBox = document.getElementById("srvDots");
+  if (!wrap || !track || !dotsBox) return;
+
+  var cards = track.querySelectorAll(".srv-card");
+  var dots = [];
+
+  // bolinhas (uma por card)
+  cards.forEach(function (c, i) {
+    var d = document.createElement("button");
+    d.className = "srv-dot" + (i === 0 ? " ativo" : "");
+    d.setAttribute("aria-label", "Ir para o serviço " + (i + 1));
+    d.onclick = function () {
+      track.scrollTo({ left: c.offsetLeft - track.offsetLeft, behavior: "smooth" });
+    };
+    dotsBox.appendChild(d);
+    dots.push(d);
+  });
+
+  // destaca a bolinha do card mais próximo
+  function marcar() {
+    var melhor = 0, menor = Infinity;
+    cards.forEach(function (c, i) {
+      var dist = Math.abs((c.offsetLeft - track.offsetLeft) - track.scrollLeft);
+      if (dist < menor) { menor = dist; melhor = i; }
+    });
+    dots.forEach(function (d, i) { d.classList.toggle("ativo", i === melhor); });
+  }
+
+  // 3 cards no desktop/tablet, 1 card no mobile (mede o bloco, não a janela)
+  function ajustar() {
+    if (wrap.clientWidth < 600) wrap.classList.add("srv-mobile");
+    else wrap.classList.remove("srv-mobile");
+    marcar();
+  }
+
+  track.addEventListener("scroll", marcar);
+  window.addEventListener("resize", ajustar);
+  if (window.ResizeObserver) new ResizeObserver(ajustar).observe(wrap);
+  ajustar();
+
+  // autoplay
+  setInterval(function () {
+    var fim = track.scrollLeft + track.clientWidth >= track.scrollWidth - 5;
+    if (fim) track.scrollTo({ left: 0 });
+    else track.scrollBy({ left: cards[0].offsetWidth + 16 });
+  }, 4000);
+})();
+</script>
