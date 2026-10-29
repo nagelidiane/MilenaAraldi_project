@@ -77,16 +77,3 @@ A maior parte da página foi montada com os blocos nativos do Softr. Para a vitr
 
 ---
 
-## Prints
-
-<!-- Adicione aqui as imagens da pasta prints/, por exemplo: -->
-<!-- ![Versão desktop](prints/desktop.png) -->
-<!-- ![Versão mobile](prints/mobile.png) -->
-
----
-
-## Autoria
-
-Projeto desenvolvido como atividade acadêmica.
-
-Proprietária do salão: **Milena Araldi**
